@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Test Your Liquids</title>
+	<script type="text/javascript" src="http://pubnub.github.io/eon/lib/eon.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/lib/eon.css" />
+  </head>
+
+  <body>
+    <section id="banner">
+      <div class="inner">
+        <h2>Test Your Liquids</h2>
+        <p>Begin analysis</p>
+        <ul class="actions">
+          <li><a href="#one" class="button big scrolly">Begin</a></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+
+  <script>
+	eon.chart({
+  	channel: "pubnub-eon-iot",
+  	generate: {
+    	bindto: '#gauge',
+    	data: {
+      	type: 'gauge'
+    	},
+    	gauge: {
+      	min: 0,
+      	max: 10
+    	},
+    	color: {
+      	pattern: ['#FF0000', '#F6C600', '#60B044'],
+      	threshold: {
+        	values: [3, 6, 9]
+      	}
+    	}
+  	}
+	});
+  </script>
+</html>
