@@ -3,41 +3,117 @@
   <head>
 	<meta charset="utf-8">
 	<title>Test Your Liquids</title>
-	<script type="text/javascript" src="http://pubnub.github.io/eon/lib/eon.js"></script>
-	<link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/lib/eon.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.dropotron.min.js"></script>
+  <script src="js/jquery.scrollgress.min.js"></script>
+  <script src="js/jquery.scrolly.min.js"></script>
+  <script src="js/jquery.slidertron.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <script src="js/skel-layers.min.js"></script>
+  <script src="js/init.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="styles/keen-dashboards.css">
+  <link rel="stylesheet" href="styles/css.css">
+
+
   </head>
 
   <body>
+
+    <!--NAVBAR-->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="76.39 132.243 15.35 22" width="20" height="20" fill="#777">
+              <defs>
+                <path id="a"
+                  d="M88.31 136.63c.29-.28.43-.63.43-1.05 0-.41-.14-.76-.43-1.04-.08-.09-.78-.78-.86-.87-.29-.28-.64-.43-1.05-.43-.41 0-.76.15-1.05.43-.75.75-6.78 6.77-7.53 7.53-.29.28-.43.63-.43 1.04 0 .42.14.76.43 1.05.75.75 6.78 6.77 7.53 7.53.29.28.64.42 1.05.42.41 0 .76-.14 1.05-.42.08-.09.78-.78.86-.87.29-.29.43-.63.43-1.04 0-.41-.14-.76-.43-1.05-.37-.38-2.24-2.25-5.61-5.61 3.37-3.37 5.24-5.24 5.61-5.62z" />
+              </defs>
+              <use xlink:href="#a" />
+              <use xlink:href="#a" />
+            </svg>
+          </a>
+          <a class="navbar-brand" href="./">Detection by Osmotic and Resistive Computation</a>
+        </div>
+        <div class="navbar-collapse">
+          <ul class="navbar-nav nav main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="XYZ">Team</a></li>
+            <li><a href="https://github.com/mchan1995/graphene-hack">Source</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--BANNER-->
     <section id="banner">
       <div class="inner">
+
         <h2>Test Your Liquids</h2>
         <p>Begin analysis</p>
         <ul class="actions">
-          <li><a href="dashboard.html" class="button big scrolly">Begin</a></li>
+          <li><a href="#dashboard" class="button big scrolly">Begin</a></li>
         </ul>
       </div>
     </section>
+
+    <!--DASHBOARD-->
+    <section id="dashboard">
+      <body class="keen-dashboard">
+
+        <div class="container grid grid-two-and-one">
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              Pageviews by browser (past 24 hours)
+            </div>
+            <div class="chart-stage">
+              <img data-src="holder.js/100px350?theme=white">
+            </div>
+            <div class="chart-notes">
+              This is a sample text region to describe this chart.
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              Pageviews by browser (past 5 days)
+            </div>
+            <div class="chart-stage">
+              <img data-src="holder.js/100px350?theme=white">
+            </div>
+            <div class="chart-notes">
+              Notes go down here
+            </div>
+          </div>
+          <div class="two">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Impressions by advertiser
+              </div>
+              <div class="chart-stage">
+                <img data-src="holder.js/100px150?theme=white">
+              </div>
+              <div class="chart-notes">
+                Notes go down here
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="small text-muted">Built with &#9829; at <a href="https://www.graphenehackathon.com">The Graphene Hackathon</a></p>
+        </div>
+    </section>
+
+
   </body>
 
-  <script>
-	eon.chart({
-  	channel: "pubnub-eon-iot",
-  	generate: {
-    	bindto: '#gauge',
-    	data: {
-      	type: 'gauge'
-    	},
-    	gauge: {
-      	min: 0,
-      	max: 10
-    	},
-    	color: {
-      	pattern: ['#FF0000', '#F6C600', '#60B044'],
-      	threshold: {
-        	values: [3, 6, 9]
-      	}
-    	}
-  	}
-	});
-  </script>
+
 </html>
