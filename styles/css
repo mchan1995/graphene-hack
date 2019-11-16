@@ -1,0 +1,15 @@
+body {
+  background: #fff;
+  color: white;
+}
+
+a {
+  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  color: #e0555a;
+  text-decoration: none;
+  border-bottom: dotted 1px;
+}
