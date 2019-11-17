@@ -54,5 +54,6 @@ function backgroundProcess() {
 
         getCommandOutput().style.background = "DarkGray";
         getDemo().innerHTML = "Complete.";
+
     });
 };

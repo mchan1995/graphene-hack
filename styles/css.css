@@ -941,13 +941,11 @@
   }
 
   #analysis .inner {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) }
+    position: relative;
+    top: 50%;
+    left: 40%;
+	}
 
-  }
 
 /* DASHBOARD */
   #dashboard {
