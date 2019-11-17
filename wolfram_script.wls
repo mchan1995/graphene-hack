@@ -1,7 +1,7 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-(* set the directory we want *)
+(* set the directory we want test *)
 
 SetDirectory["/Users/tomi/Documents/GitHub/graphene-hack/"];
 
@@ -33,17 +33,20 @@ barchart = StringReplace[barchart,"x2"->"25"];
 barchart = StringReplace[barchart,"x3"->"30"];
 barchart = StringReplace[barchart,"x4"->"80"];
 barchart = StringReplace[barchart,"x5"->"7"];
+barchart = StringReplace[barchart,"x6"->"10"];
+barchart = StringReplace[barchart,"x7"->"12"];
+barchart = StringReplace[barchart,"x8"->"14"];
+
 
 Export["barchart.txt",barchart];
 
 bubblechart =Import["bubble_chart.js","Text"];
 
-bubblechart = StringReplace[bubblechart,"x1"->"70000"];
-bubblechart = StringReplace[bubblechart,"x2"->"9"];
+bubblechart = StringReplace[bubblechart,"x1"->"10000"];
+bubblechart = StringReplace[bubblechart,"x2"->"0.2"];
 
 Export["bubblechart.txt",bubblechart];
 
-liquidguess = "Milk"; 
+liquidguess = "Milk";
 
 Export["text.txt",liquidguess];
-
