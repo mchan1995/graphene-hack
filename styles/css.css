@@ -940,6 +940,12 @@
     height:100vh;
   }
 
+  #analysis .inner {
+    position: relative;
+    top: 50%;
+    left: 40%;
+	}
+
 
 /* DASHBOARD */
   #dashboard {

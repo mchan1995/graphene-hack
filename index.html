@@ -64,9 +64,9 @@
 
     <!--BANNER-->
     <section id="banner">
-      <div class="inner">
+      <div>
         <h2>Test Your Liquids</h2>
-        <p>Use DORC to analyse the resistance & flow rate of your liquid.</p>
+        <p>Use DORC to analyse your soil sample.</p>
         <ul class="actions">
           <li><a class="button big scrolly" id="demo">Capture and Process</a></li>
         </ul>
@@ -77,12 +77,11 @@
 
 
     <!--ANALYSIS-->
-    <section id="analysis" class="wrapper style1">
+    <section id="analysis">
       <div class="inner">
         <h3>Your solution is x </h3>
-        <div class="loader"></div>
         <ul class="actions">
-          <li><a href="#dashboard" class="button big scrolly" id="plot"> See details!</a></li>
+          <li><a href="#dashboard"class="button big scrolly" id="plot"> See details!</a></li>
         </ul>
       </div>
     </section>
@@ -163,6 +162,11 @@
         <script src="bar_chart.js" type="text/javascript"></script>
 
         <script src="bubble_chart.js" type="text/javascript"></script>
+
+<script>
+document.getElementById("start").onclick = function() {getDemo().innerHTML = "Ready."};
+</script>
+
 
        <script>
 

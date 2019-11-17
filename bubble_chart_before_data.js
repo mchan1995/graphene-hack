@@ -5,8 +5,8 @@ new Chart(document.getElementById("bubble-chart"), {
       datasets: [
         {
           label: ["90% Confidence Water"],
-          backgroundColor: "rgba(255,221,50,0.2)",
-          borderColor: "rgba(255,221,50,1)",
+          backgroundColor: "rgba(34,40,62,0.2)",
+          borderColor: "rgba(34,40,62,0.2)",
           data: [{
             x: 20000,
             y: 6,
@@ -14,8 +14,8 @@ new Chart(document.getElementById("bubble-chart"), {
           }]
         }, {
           label: ["90% Confidence Vodka"],
-          backgroundColor: "rgba(60,186,159,0.2)",
-          borderColor: "rgba(60,186,159,1)",
+          backgroundColor: "rgba(34,40,62,0.2)",
+          borderColor: "rgba(34,40,62,0.2)",
           data: [{
             x: 200000,
             y: 7.526,
@@ -23,8 +23,8 @@ new Chart(document.getElementById("bubble-chart"), {
           }]
         }, {
           label: ["Data Point"],
-          backgroundColor: "rgba(60,186,159,0.2)",
-          borderColor: "rgba(60,186,159,1)",
+          backgroundColor: "rgba(235,48,81,0.2)",
+          borderColor: "rgba(235,48,81,0.2)",
           data: [{
             x: x1,
             y: x2,
@@ -33,8 +33,8 @@ new Chart(document.getElementById("bubble-chart"), {
         },
         {
           label: ["90% Confidence Whisky"],
-          backgroundColor: "rgba(0,0,0,0.2)",
-          borderColor: "#000",
+          backgroundColor: "rrgba(34,40,62,0.2)",
+          borderColor: "rgba(34,40,62,0.2)",
           data: [{
             x: 100000,
             y: 15,
@@ -42,8 +42,8 @@ new Chart(document.getElementById("bubble-chart"), {
           }]
         }, {
           label: ["90% Confidence Milk"],
-          backgroundColor: "rgba(193,46,12,0.2)",
-          borderColor: "rgba(193,46,12,1)",
+          backgroundColor: "rgba(34,40,62,0.2)",
+          borderColor: "rgba(34,40,62,0.2)",
           data: [{
             x: 30000,
             y: 40,
