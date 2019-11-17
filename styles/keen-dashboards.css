@@ -322,7 +322,8 @@ small,
 
 .navbar-brand {
   min-height: 50px;
-  padding: 15px 15px;
+  padding-left: 15px;
+  padding-right:15px;
   line-height: 20px;
   display: flex;
   align-items: center;
