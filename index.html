@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<meta charset="utf-8">
-	<title>Test Your Liquids</title>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.dropotron.min.js"></script>
-  <script src="js/jquery.scrollgress.min.js"></script>
-  <script src="js/jquery.scrolly.min.js"></script>
-  <script src="js/jquery.slidertron.min.js"></script>
-  <script src="js/skel.min.js"></script>
-  <script src="js/skel-layers.min.js"></script>
-  <script src="js/init.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="styles/keen-dashboards.css">
-  <link rel="stylesheet" href="styles/css.css">
-  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<!-- Mary's Stuff -->
+<head>
+<meta charset="utf-8">
+<title>Test Your Liquids</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.dropotron.min.js"></script>
+<script src="js/jquery.scrollgress.min.js"></script>
+<script src="js/jquery.scrolly.min.js"></script>
+<script src="js/jquery.slidertron.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-layers.min.js"></script>
+<script src="js/init.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/keen-dashboards.css">
+<link rel="stylesheet" href="styles/css.css">
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<!-- Chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 
-  </head>
+<script>
+   function load_js()
+   {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= 'bubble_chart.js';
+      script.src= 'bar_chart.js';
+      head.appendChild(script);
+   }
+   load_js();
+</script>
+
+
 
   <body>
 
@@ -31,16 +48,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="76.39 132.243 15.35 22" width="20" height="20" fill="#777">
-              <defs>
-                <path id="a"
-                  d="M88.31 136.63c.29-.28.43-.63.43-1.05 0-.41-.14-.76-.43-1.04-.08-.09-.78-.78-.86-.87-.29-.28-.64-.43-1.05-.43-.41 0-.76.15-1.05.43-.75.75-6.78 6.77-7.53 7.53-.29.28-.43.63-.43 1.04 0 .42.14.76.43 1.05.75.75 6.78 6.77 7.53 7.53.29.28.64.42 1.05.42.41 0 .76-.14 1.05-.42.08-.09.78-.78.86-.87.29-.29.43-.63.43-1.04 0-.41-.14-.76-.43-1.05-.37-.38-2.24-2.25-5.61-5.61 3.37-3.37 5.24-5.24 5.61-5.62z" />
-              </defs>
-              <use xlink:href="#a" />
-              <use xlink:href="#a" />
-            </svg>
+          <a class="navbar-brand" href="./">
+            <img src="images/vector-white.png" alt="logo">
           </a>
           <a class="navbar-brand" href="./">Detection by Osmotic and Resistive Computation</a>
         </div>
@@ -57,25 +66,30 @@
     <!--BANNER-->
     <section id="banner">
       <div class="inner">
-
         <h2>Test Your Liquids</h2>
         <p>Use DORC to analyse the resistance & flow rate of your liquid.</p>
         <ul class="actions">
-          <li><a href="#analysis" class="button big scrolly">Begin Analysis</a></li>
+          <li><a href="#analysis" class="button big scrolly" id="demo">Capture and Process</a></li>
         </ul>
       </div>
     </section>
 
+
+
+
     <!--ANALYSIS-->
     <section id="analysis" class="wrapper style1">
-      <div class = "inner">
+      <div>
         <h3>Analysing...</h3>
         <div class="loader"></div>
         <ul class="actions">
-          <li><a href="#dashboard" class="button big scrolly">Plot my results</a></li>
+          <li><a href="#dashboard" class="button big scrolly" id="plot"> Analysis</a></li>
         </ul>
       </div>
     </section>
+
+
+
 
     <!--DASHBOARD-->
     <section id="dashboard" class="wrapper style1">
@@ -101,7 +115,7 @@
               Pageviews by browser (past 5 days)
             </div>
             <div class="chart-stage">
-              <img data-src="holder.js/100px350?theme=white">
+              <canvas id="bubble-chart" width="800" height="800"></canvas>
             </div>
             <div class="chart-notes">
               Notes go down here
@@ -113,7 +127,7 @@
                 Impressions by advertiser
               </div>
               <div class="chart-stage">
-                <img data-src="holder.js/100px150?theme=white">
+                <canvas id="bar-chart" width="800" height="450"></canvas>
               </div>
               <div class="chart-notes">
                 Notes go down here
@@ -125,10 +139,75 @@
         <div class="container">
           <p class="small text-muted">Built with &#9829; at <a href="https://www.graphenehackathon.com">The Graphene Hackathon</a></p>
         </div>
+
+
+
+
+
+            <script src="./gui-funct.js"></script>
+
+       <div class="container">
+            <hr>
+            <textarea rows="20" cols="90" id="command-output" disabled="true"></textarea>
+            <div id="status"></div>
+            <hr>
+            </div>
+
+
     </section>
 
 
+        <script src="bar_chart.js" type="text/javascript"></script>
+
+        <script src="bubble_chart.js" type="text/javascript"></script>
+
+       <script>
+
+       document.getElementById("plot").onclick = function() {plotfunction()};
+
+    function plotfunction() {
+    load_js()
+    makebubble();
+    makebar()
+
+    }
+       </script>
+
+
+
+
+
+
+        <script>
+        document.getElementById("demo").onclick = function() {myFunction()};
+
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Working....";
+
+          // GLUE to the screen
+          function getCommandOutput() { return document.getElementById("command-output");  };
+          function getDemo() { return document.getElementById("demo");  };
+          function getStatus()      { return document.getElementById("status");  };
+          backgroundProcess();
+
+          // End of GLUE
+          //document.getElementById("demo").innerHTML = "Captured and Processed ";
+
+        }
+
+
+        </script>
+
+
+    <script>
+    // GLUE to the screen
+    // End of GLUE
+    function getCommandOutput() { return document.getElementById("command-output");  };
+    function getStatus()      { return document.getElementById("status");  };
+    function getDemo() { return document.getElementById("demo");  };
+
+    backgroundProcess();
+    </script>
+
+
   </body>
-
-
-</html>
