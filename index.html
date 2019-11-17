@@ -16,23 +16,14 @@
 <link rel="stylesheet" type="text/css" href="styles/keen-dashboards.css">
 <link rel="stylesheet" href="styles/css.css">
 <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-</head>
+
 
 <!-- Chart js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 
-<script>
-   function load_js()
-   {
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.src= 'bubble_chart.js';
-      script.src= 'bar_chart.js';
-      head.appendChild(script);
-   }
-   load_js();
-</script>
+</head>
+
 
 
 
@@ -63,12 +54,12 @@
     </div>
 
     <!--BANNER-->
-    <section id="banner">
-      <div>
+    <section>
+      <div id="banner">
         <h2>Test Your Liquids</h2>
         <p>Use DORC to analyse your soil sample.</p>
         <ul class="actions">
-          <li><a class="button big scrolly" id="demo">Capture and Process</a></li>
+          <li> <a class="button big scrolly" id="demo"> Capture and Process </a> </li>
         </ul>
       </div>
     </section>
@@ -79,9 +70,9 @@
     <!--ANALYSIS-->
     <section id="analysis">
       <div class="inner">
-        <h3>Your solution is x </h3>
+        <h3>Your solution is <div id="liquid_name"> x </div>  </h3>
         <ul class="actions">
-          <li><a href="#dashboard"class="button big scrolly" id="plot"> See details!</a></li>
+          <li><a href="#dashboard" class="button big scrolly" id="plot"> See details!</a></li>
         </ul>
       </div>
     </section>
@@ -159,62 +150,91 @@
     </section>
 
 
-        <script src="bar_chart.js" type="text/javascript"></script>
 
-        <script src="bubble_chart.js" type="text/javascript"></script>
 
-<script>
-document.getElementById("start").onclick = function() {getDemo().innerHTML = "Ready."};
+
+
+
+            <script>
+               function load_js()
+               {
+                  var head= document.getElementsByTagName('head')[0];
+                  var script= document.createElement('script');
+                  script.src= 'bubble_chart.js';
+                  script.src= 'bar_chart.js';
+                  head.appendChild(script);
+               }
+               load_js();
+            </script>
+
+
+                <script src="bar_chart.js" type="text/javascript"></script>
+                <script src="bubble_chart.js" type="text/javascript"></script>
+
+
+                <script>
+                document.getElementById("start").onclick = function() {getDemo().innerHTML = "Ready."};
+                </script>
+
+
+                <script>
+                  document.getElementById("plot").onclick = function() {plotfunction()};
+                    function plotfunction() {
+                    load_js();
+                    makebubble();
+                    makebar()
+                    }
+                </script>
+
+              <script>  function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                var ptag = document.getElementById('liquid_name');
+                ptag.innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+}
 </script>
 
+                <script>
+                document.getElementById("demo").onclick = function() {myFunction()};
 
-       <script>
+                function myFunction() {
+                  document.getElementById("demo").innerHTML = "Working....";
 
-       document.getElementById("plot").onclick = function() {plotfunction()};
+                  // GLUE to the screen
+                  function getCommandOutput() { return document.getElementById("command-output");  };
+                  function getDemo() { return document.getElementById("demo");  };
+                  function getStatus()      { return document.getElementById("status");  };
+                  backgroundProcess();
 
-    function plotfunction() {
-    load_js()
-    makebubble();
-    makebar()
+                  // End of GLUE
+                  //document.getElementById("demo").innerHTML = "Captured and Processed ";
 
-    }
-       </script>
-
-
-
-
-
-
-        <script>
-        document.getElementById("demo").onclick = function() {myFunction()};
-
-        function myFunction() {
-          document.getElementById("demo").innerHTML = "Working....";
-
-          // GLUE to the screen
-          function getCommandOutput() { return document.getElementById("command-output");  };
-          function getDemo() { return document.getElementById("demo");  };
-          function getStatus()      { return document.getElementById("status");  };
-          backgroundProcess();
-
-          // End of GLUE
-          //document.getElementById("demo").innerHTML = "Captured and Processed ";
-
-        }
+                }
 
 
-        </script>
+                </script>
 
-
-    <script>
-    // GLUE to the screen
-    // End of GLUE
-    function getCommandOutput() { return document.getElementById("command-output");  };
-    function getStatus()      { return document.getElementById("status");  };
-    function getDemo() { return document.getElementById("demo");  };
-
-    backgroundProcess();
-    </script>
+                        <script>
+                        // GLUE to the screen
+                        // End of GLUE
+                        function getCommandOutput() { return document.getElementById("command-output");  };
+                        function getStatus()      { return document.getElementById("status");  };
+                        function getDemo() { return document.getElementById("demo");  };
+                        backgroundProcess();
+                        </script>
 
 
   </body>
+  </html>
