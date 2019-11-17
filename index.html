@@ -70,7 +70,7 @@
     <!--ANALYSIS-->
     <section id="analysis">
       <div class="inner">
-        <h3>Your solution is <div id="liquid_name"> x </div>  </h3>
+        <h3>Your solution is <div id="liquid_name">  - awaiting results - </div>  </h3>
         <ul class="actions">
           <li><a href="#dashboard" class="button big scrolly" id="plot"> See details!</a></li>
         </ul>
@@ -106,8 +106,21 @@
               <div class="chart-notes">
                 Circle corressponds to 90% confidence interval.
               </div>
+          </div>
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              <h2> Raw Data </h2>
+            </div>
+            <div class="chart-stage">
+<div >
+              <img id="raw_data" width="800" height="500" src="img_girl.jpg" class="center" alt="Girl in a jacket">
 
-</div>
+              </div>
+            </div>
+            <div class="chart-notes">
+              Raw Data
+            </div>
+        </div>
           </div>
         </div>
 
@@ -173,7 +186,11 @@
 
 
                 <script>
-                document.getElementById("start").onclick = function() {getDemo().innerHTML = "Ready."};
+                document.getElementById("start").onclick = function() {
+                getDemo().innerHTML = "Ready.";
+                var ptag = document.getElementById('liquid_name');
+                ptag.innerHTML = "-awaiting results -"
+              };
                 </script>
 
 
@@ -183,6 +200,7 @@
                     load_js();
                     makebubble();
                     makebar()
+                    getRawData().src="/Users/tomi/Documents/GitHub/graphene-hack/smoothplot.png"
                     }
                 </script>
 
@@ -232,6 +250,7 @@
                         function getCommandOutput() { return document.getElementById("command-output");  };
                         function getStatus()      { return document.getElementById("status");  };
                         function getDemo() { return document.getElementById("demo");  };
+                        function getRawData() { return document.getElementById("raw_data");  };
                         backgroundProcess();
                         </script>
 

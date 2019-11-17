@@ -873,21 +873,6 @@
 		text-align: center;
 	}
 
-		#banner:after {
-			-moz-transition: opacity 2s ease-in-out;
-			-webkit-transition: opacity 2s ease-in-out;
-			-o-transition: opacity 2s ease-in-out;
-			-ms-transition: opacity 2s ease-in-out;
-			transition: opacity 2s ease-in-out;
-			background: #3d4045;
-			height: 100%;
-			left: 0;
-			opacity: 0;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			z-index: 1;
-		}
 
 		#banner :last-child {
 			margin-bottom: 0;
@@ -1023,3 +1008,9 @@
 		#footer .copyright {
 			font-size: 0.8em;
 		}
+
+		.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
