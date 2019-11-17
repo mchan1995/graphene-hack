@@ -28,7 +28,7 @@ new Chart(document.getElementById("bubble-chart"), {
           data: [{
             x: x1,
             y: x2,
-            r: 7
+            r: 10
           }]
         },
         {
@@ -47,7 +47,7 @@ new Chart(document.getElementById("bubble-chart"), {
           borderColor: "rgba(34,40,62,0.2)",
           data: [{
             x: 11000,
-            y: 0.5,
+            y: 0.65,
             r: 26
           }]
         },

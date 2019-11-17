@@ -2,13 +2,9 @@
 
 echo "Hello - This is Tomi "
 
-sleep 1
-
 echo "Running Python Script"
 
-sleep 0.5
-
-python pythontest.py
+python arduino.py
 
 echo "Copy liquid test file "
 
@@ -36,8 +32,6 @@ cp bubblechart.txt bubble_chart.js
 
 
 echo "Let us trying to run a mathematica AI script"
-
-sleep 0.5
 
 echo "Mathematica Result"
 wolframscript -code Range[8]

@@ -175,6 +175,8 @@
                   var script= document.createElement('script');
                   script.src= '/Users/tomi/Documents/GitHub/graphene-hack/bubble_chart.js';
                   script.src= '/Users/tomi/Documents/GitHub/graphene-hack/bar_chart.js';
+                  getRawData().src="/Users/tomi/Documents/GitHub/graphene-hack/smoothplot.png"
+
                   head.appendChild(script);
                }
                load_js();
@@ -193,15 +195,17 @@
               };
                 </script>
 
+<script>
+function plotfunction() {
+load_js();
+makebubble();
+makebar()
+getRawData().src="/Users/tomi/Documents/GitHub/graphene-hack/smoothplot.png"
+}
+</script>
 
                 <script>
                   document.getElementById("plot").onclick = function() {plotfunction()};
-                    function plotfunction() {
-                    load_js();
-                    makebubble();
-                    makebar()
-                    getRawData().src="/Users/tomi/Documents/GitHub/graphene-hack/smoothplot.png"
-                    }
                 </script>
 
               <script>  function readTextFile(file)

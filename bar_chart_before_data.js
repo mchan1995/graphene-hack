@@ -3,7 +3,7 @@ function makebar() {
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-      labels: ["Almond Milk", "Salt Water", "Olive Oild", "Soil", "Suger Water","Tea","Water","Orange Juice"],
+      labels: ["Almond Milk", "Salt Water", "Olive Oil", "Soil", "Suger Water","Tea","Water","Orange Juice"],
       datasets: [
         {
           label: "Probability",
