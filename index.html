@@ -55,8 +55,7 @@
         </div>
         <div class="navbar-collapse">
           <ul class="navbar-nav nav main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="XYZ">Team</a></li>
+            <li><a id="start">Start</a></li>
             <li><a href="https://github.com/mchan1995/graphene-hack">Source</a>
           </ul>
         </div>
@@ -69,7 +68,7 @@
         <h2>Test Your Liquids</h2>
         <p>Use DORC to analyse the resistance & flow rate of your liquid.</p>
         <ul class="actions">
-          <li><a href="#analysis" class="button big scrolly" id="demo">Capture and Process</a></li>
+          <li><a class="button big scrolly" id="demo">Capture and Process</a></li>
         </ul>
       </div>
     </section>
@@ -80,15 +79,13 @@
     <!--ANALYSIS-->
     <section id="analysis" class="wrapper style1">
       <div>
-        <h3>Analysing...</h3>
+        <h3>Your solution is x </h3>
         <div class="loader"></div>
         <ul class="actions">
-          <li><a href="#dashboard" class="button big scrolly" id="plot"> Analysis</a></li>
+          <li><a href="#dashboard" class="button big scrolly" id="plot"> See details!</a></li>
         </ul>
       </div>
     </section>
-
-
 
 
     <!--DASHBOARD-->
@@ -98,43 +95,33 @@
         <div class = "header">
           <h2>Liquid Properties</h2>
         </div>
-        <div class="container grid grid-two-and-one">
+        <div class="container grid ">
           <div class="chart-wrapper">
             <div class="chart-title">
-              Pageviews by browser (past 24 hours)
+              <h2> Probability of Liquid Characteristic Detection </h2>
             </div>
             <div class="chart-stage">
-              <img data-src="holder.js/100px350?theme=white">
-            </div>
-            <div class="chart-notes">
-              This is a sample text region to describe this chart.
+              <canvas id="bar-chart" width="800" height="200"></canvas>
             </div>
           </div>
-          <div class="chart-wrapper">
-            <div class="chart-title">
-              Pageviews by browser (past 5 days)
-            </div>
-            <div class="chart-stage">
-              <canvas id="bubble-chart" width="800" height="800"></canvas>
-            </div>
-            <div class="chart-notes">
-              Notes go down here
-            </div>
-          </div>
+
           <div class="two">
             <div class="chart-wrapper">
               <div class="chart-title">
-                Impressions by advertiser
+                <h2> Principal Component AI Analysis </h2>
               </div>
               <div class="chart-stage">
-                <canvas id="bar-chart" width="800" height="450"></canvas>
+                <canvas id="bubble-chart" width="200" height="100"></canvas>
               </div>
               <div class="chart-notes">
-                Notes go down here
+                Circle corressponds to 90% confidence interval.
               </div>
-            </div>
+
+</div>
           </div>
         </div>
+
+        <br>
 
         <div class="container">
           <p class="small text-muted">Built with &#9829; at <a href="https://www.graphenehackathon.com">The Graphene Hackathon</a></p>
@@ -147,11 +134,27 @@
             <script src="./gui-funct.js"></script>
 
        <div class="container">
+
+
             <hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+                                    <h1> Developer Area </h1>
             <textarea rows="20" cols="90" id="command-output" disabled="true"></textarea>
             <div id="status"></div>
             <hr>
             </div>
+
 
 
     </section>
