@@ -8,7 +8,7 @@ new Chart(document.getElementById("bar-chart"), {
         {
           label: "Probability",
           backgroundColor: ["#EB3052", "#22283E","#EB3052","#22283E","#EB3052"],
-          data: [x1,x2,x3,x4,x5]
+          data: [10,25,30,80,7]
         }
       ]
     },

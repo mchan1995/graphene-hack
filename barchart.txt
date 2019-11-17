@@ -7,7 +7,7 @@ new Chart(document.getElementById("bar-chart"), {
       datasets: [
         {
           label: "Probability",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          backgroundColor: ["#EB3052", "#22283E","#EB3052","#22283E","#EB3052"],
           data: [10,25,30,80,7]
         }
       ]

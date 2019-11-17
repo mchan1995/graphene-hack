@@ -52,6 +52,9 @@ function backgroundProcess() {
         else
           setStatus('child process exited with code ' + code);
 
+
+        readTextFile("/Users/tomi/Documents/GitHub/graphene-hack/text.txt");
+
         getCommandOutput().style.background = "DarkGray";
         getDemo().innerHTML = "Complete.";
 

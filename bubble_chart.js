@@ -26,8 +26,8 @@ new Chart(document.getElementById("bubble-chart"), {
           backgroundColor: "rgba(235,48,81,0.2)",
           borderColor: "rgba(235,48,81,0.2)",
           data: [{
-            x: x1,
-            y: x2,
+            x: 70000,
+            y: 9,
             r: 3
           }]
         },

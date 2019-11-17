@@ -1,19 +1,17 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-(* set the directory we want *) 
+(* set the directory we want *)
 
-SetDirectory["/Users/tomi/liquid_sensing/"];
+SetDirectory["/Users/tomi/Documents/GitHub/graphene-hack/"];
 
 data =Import["output.txt","Data"];
-(* drop the first data value *) 
+(* drop the first data value *)
 data = Drop[data,1];
-(* correct to zero time *) 
+(* correct to zero time *)
 data[[;;,{1}]]=data[[;;,{1}]]-data[[1,1]];
 
-
-
-(* convert to MO *) 
+(* convert to MO *)
 data[[;;,{2}]]=data[[;;,{2}]]/10^6;
 data[[;;,{3}]]=data[[;;,{3}]]/10^6;
 data[[;;,{4}]]=data[[;;,{4}]]/10^6;
@@ -22,7 +20,7 @@ avdata = MovingAverage[data,10];
 smoothplot = ListPlot[{avdata[[;;,{1,2}]],avdata[[;;,{1,3}]],avdata[[;;,{1,4}]]},Joined->True,PlotRange->All,InterpolationOrder->4,Frame->True, FrameLabel->{{"Restivity [M Ohms]",""},{" Time [mS]","Conductivity Decay"}},ImageSize->Full];
 
 Export["smoothplot.png",smoothplot,ImageResolution->800];
-(* top 60% (from max value - use as average) *) 
+(* top 60% (from max value - use as average) *)
 top60 = Max[avdata[[;;,{2}]]]/100*60;
 topdata = Cases[avdata[[;;,{1,2}]],{_,y_}/;y>top60];
 topdataav = topdata[[;;,2]];
@@ -45,4 +43,7 @@ bubblechart = StringReplace[bubblechart,"x2"->"9"];
 
 Export["bubblechart.txt",bubblechart];
 
+liquidguess = "Milk"; 
+
+Export["text.txt",liquidguess];
 

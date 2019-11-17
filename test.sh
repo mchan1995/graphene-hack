@@ -10,6 +10,10 @@ sleep 0.5
 
 python pythontest.py
 
+echo "Copy liquid test file "
+
+cp text_before.txt text.txt
+
 echo "Copy bar chart file "
 
 cp bar_chart_before_data.js bar_chart.js
