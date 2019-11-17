@@ -166,6 +166,12 @@
 		text-align: right;
 	}
 
+  .column-load {
+    float: left;
+    width: 20%;
+    padding: 10px;
+  }
+
 /* Section/Article */
 
 	section.special, article.special {
@@ -215,6 +221,7 @@
 		header.major p {
 			margin: -1em 0 3.5em 0;
 		}
+
 
 
 /* Box */
@@ -925,11 +932,12 @@
     height:100vh;
   }
 
-  #analysis .inner {
-    position: relative;
-    top: 50%;
-    left: 40%;
-	}
+.row {
+  padding-top: 20vh;
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
 
 
 /* DASHBOARD */
